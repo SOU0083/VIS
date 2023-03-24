@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DomainLayer.DomainModel.Customer" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAACAEAAAiAAAAAAIAAAQAAABEAAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>DomainModel\Customer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DomainModel.Event" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAJiAAQCACAAAABAAAAIAAQAAAAAAAAAAiAAEQIAAAA=</HashCode>
+      <FileName>DomainModel\Event.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Event_Object" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DomainModel.Institution" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.75" Width="2.5" />
+    <AssociationLine Name="Categories" Type="DomainLayer.DomainModel.InstitutionCategory" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="9.188" />
+        <Point X="5.75" Y="9.188" />
+        <Point X="5.75" Y="10.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.002" Y="0.152" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAiAAAAAAIAAAQAAAAEAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>DomainModel\Institution.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Categories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DomainModel.InstitutionCategory" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DomainModel\InstitutionCategory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DomainModel.Reservation" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="5.75" Width="2.25" />
+    <AssociationLine Name="Reservation_Customer" Type="DomainLayer.DomainModel.Customer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.755" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Reservation_ReservationObject" Type="DomainLayer.DomainModel.ReservationObject">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.089" Y="0.06" Height="0.182" Width="2.068" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgBCAAAAAAAAACBAAAAAAAAAAAAIAAAAACAAEQBCAAA=</HashCode>
+      <FileName>DomainModel\Reservation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Reservation_Customer" />
+      <Property Name="Reservation_ReservationObject" />
+      <Property Name="Reservation_Event" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DomainModel.ReservationObject" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="6.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>DomainModel\ReservationObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DomainLayer.DomainModel.StructuralObject">
+    <Position X="3.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>DomainModel\StructuralObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLayer.DTO.InstitutionDTO">
+    <Position X="0.5" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAIAAAQEQAAEAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>DTO\InstitutionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DomainLayer.DomainModel.IDeleted">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>DomainModel\IDeleted.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DomainLayer.DomainModel.IEntity">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DomainModel\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DomainLayer.DomainModel.IUser">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAiAAAAAAIAAAQAAAAEAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>DomainModel\IUser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

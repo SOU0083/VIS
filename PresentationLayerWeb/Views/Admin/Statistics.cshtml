@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DomainLayer.DTO.InstitutionCategoryStatisticsDTO>
+
+@{
+    ViewData["Title"] = "Statistika";
+}
+
+<h2>Statistika</h2>
+
+<h3>Počet rezervací v jednotlivých kategoriích</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Název kategorie
+            </th>
+            <th>
+                Celkový počet rezervací
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Count)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Události";
+}
+
+<h2>Smazat událost</h2>
+<p>Opravdu chcete událost smazat?</p>>
+
+@Html.ActionLink("Smazat", "EventsDeleteConfirmed", new { id = ViewBag.EventId })
+

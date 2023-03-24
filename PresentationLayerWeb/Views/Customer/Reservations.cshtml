@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DomainLayer.DomainModel.Reservation>
+
+@{
+        ViewData["Title"] = "Rezervace";
+    }
+
+<h2>Rezervace</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Jméno objektu
+            </th>
+            <th>
+                Jméno události
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                Začátek
+            </th>
+            <th>
+                Konec
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+{
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reservation_ReservationObject.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reservation_Event.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reservation_ReservationObject.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

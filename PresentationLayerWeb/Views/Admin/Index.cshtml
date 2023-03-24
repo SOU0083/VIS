@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DomainLayer.DTO.InstitutionDTO>
+
+@{
+    ViewData["Title"] = "Instituce";
+}
+
+<h2>Instituce</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                Číslo popisné
+            </th>
+            <th>
+                PSČ
+            </th>
+            <th>
+                Ulice
+            </th>
+            <th>
+                Město
+            </th>
+            <th>
+                Telefonní číslo
+            </th>
+            <th>
+                Název
+            </th>
+            <th>
+                Hierarchie - cesta
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HierarchyId)
+            </td>
+            <td>
+                @Html.ActionLink("Smazat", "Delete", new {  id= item.HierarchyId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

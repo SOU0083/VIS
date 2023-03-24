@@ -1,0 +1,137 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation_Layer"
+        xmlns:Properties="clr-namespace:Presentation_Layer.Properties" x:Class="Presentation_Layer.Main_Customer"
+        mc:Ignorable="d"
+        Title="Rezervační portál - zákazník" Width="800" d:DesignHeight="635">
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Home">
+                <Grid Background="#FFE5E5E5" >
+                    <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Vítejte v našem rezervačním systému." VerticalAlignment="Center" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" FontFamily="Times New Roman" TextDecorations="{x:Null}" FontStyle="Italic"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Vyhledat rezervaci">
+                <StackPanel Background="#FFE5E5E5">
+                    <GroupBox Header="Vyhledat rezervaci">
+                        <StackPanel Margin="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="101*"/>
+                                    <ColumnDefinition Width="49*"/>
+                                    <ColumnDefinition Width="201*"/>
+                                    <ColumnDefinition Width="403*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Label Content="Název instituce:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <TextBox Name="TextBox_Institution_Name" Grid.Row="0" Grid.Column="2" Margin="3" />
+                                <Label Content="Kategorie instituce:" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <ComboBox Name="ComboBox_Institution_Category" Grid.Row="1" Grid.Column="2" Margin="3" />
+                                <Label Content="Lokalita:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <ComboBox Name="ComboBox_Institution_Town" Grid.Row="2" Grid.Column="2" Margin="3" />
+
+                                <Button Name="Search_Institution" Content="Vyhledat" Grid.Row="3" Grid.Column="2" Margin="3" Click="Search_Institution_Click" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Výsledky hledání">
+                        <StackPanel Margin="10">
+                            <DataGrid Name="dataGridSearchInstitutions" Height="200" IsReadOnly="true" SelectionChanged="DataGridSearchInstitutions_SelectionChanged" />
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Detail instituce">
+                        <StackPanel Margin="10">
+                            <TreeView Name="treeViewObjects" Height="100" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="Add_Event" Content="Rezervovat" Grid.Row="0" Grid.Column="0" Padding="3" Click="Add_Event_Click" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Vyhledat událost">
+                <StackPanel Background="#FFE5E5E5">
+                    <GroupBox Header="Vyhledat událost">
+                        <StackPanel Margin="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="188"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Od:"  Grid.Row="0" Grid.Column="0" />
+                                    <DatePicker Name="DatePicker_Event_From" Grid.Column="1" Grid.Row="0" Margin="3" />
+                                    <Label Content="Do:"  Grid.Row="1" Grid.Column="0" />
+                                    <DatePicker Name="DatePicker_Event_To" Grid.Column="1" Grid.Row="1" Margin="3" />
+                                    <Label Content="Max cena:"  Grid.Row="3" Grid.Column="0" />
+                                    <TextBox Name="Input_Event_MaxPrice" Grid.Row="3" Grid.Column="1" Margin="3" />
+                                    <Button Name="Search_Event" Content="Vyhledat" Grid.Row="6" Grid.Column="1" Margin="3" Click="Search_Event_Click" />
+                                </Grid>
+                                <Calendar Grid.Row="0" Grid.Column="1" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Výsledky hledání">
+                        <StackPanel Margin="10">
+                            <DataGrid Name="dataGridSearchEvents" Height="100" IsReadOnly="true"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="Reserve_Event" Content="Rezervovat" Grid.Row="0" Grid.Column="0" Padding="3" Click="Reserve_Event_Click" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Mé rezervace">
+                <StackPanel Background="#FFE5E5E5">
+                    <GroupBox Header="Mé rezervace">
+                        <StackPanel Margin="10">
+                            <DataGrid Name="dataGridReservations" Height="100" IsReadOnly="true" />
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Detail rezervace">
+                        <StackPanel Margin="10">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Content="Aktualizovat" Grid.Row="0" Grid.Column="0" Padding="3" />
+                                <Button Content="Zrušit" Grid.Row="0" Grid.Column="1" Padding="3" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

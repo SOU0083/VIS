@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DomainLayer.DomainModel.Event>
+
+@{
+    ViewData["Title"] = "Události";
+}
+
+<h2>Události</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Jméno události
+            </th>
+            <th>
+                Jméno objektu
+            </th>
+            <th>
+                Začátek
+            </th>
+            <th>
+                Konec
+            </th>
+            <th>
+                Rezervace od
+            </th>
+            <th>
+                Rezervace do
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Object.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanReserveFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanReserveTo)
+            </td>
+            <td>
+                @Html.ActionLink("Rezervovat", "Reserve", new { id = item.Id, canReserveFrom = item.CanReserveFrom, canReserveTo = item.CanReserveTo, eventId = item.Event_Object.Id, start = item.Start, end = item.End })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

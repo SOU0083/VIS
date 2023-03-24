@@ -1,0 +1,20 @@
+﻿@model DomainLayer.DTO.SearchEventForm
+@{
+    ViewData["Title"] = "Události";
+}
+
+<h2>Události</h2>
+
+@using (Html.BeginForm("Search", "Customer", FormMethod.Post))
+{
+    @Html.Label("Od: ") 
+    @Html.TextBoxFor(model => model.From, new { type = "date" })
+    <br />
+    @Html.Label("Do: ")
+    @Html.TextBoxFor(model => model.To, new { type = "date" })
+    <br />
+    @Html.Label("Max cena: ")
+    @Html.TextBoxFor(model => model.Price)
+    <br />
+    <input type="submit" value="Vyhledat" />
+}

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataLayer.Database">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABEAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.JsonFileSerializer">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>JsonFileSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.AbstractMapper&lt;T&gt;">
+    <Position X="0.5" Y="1.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="DataLayer.DataMapper.AbstractMapper&lt;T&gt;.Methods">
+        <TypeIdentifier>
+          <NewMemberFileName>DataMapper\AbstractMapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAECAABAAAAAAAAAAAAAAAAEKAAABAAAAQAAAAAA=</HashCode>
+      <FileName>DataMapper\AbstractMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.CustomerMapper">
+    <Position X="10" Y="0.5" Width="2" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="11" Y="3.812" />
+        <Point X="11" Y="2.761" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapper\CustomerMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.EventMapper">
+    <Position X="3.75" Y="4.5" Width="2.25" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="5" Y="3.812" />
+        <Point X="5" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAACAABEAAACAAAACABIAAAECAAABAAIAAAAgABA=</HashCode>
+      <FileName>DataMapper\EventMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.InstitutionCategoryMapper">
+    <Position X="6.75" Y="0.5" Width="2.25" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="7.938" Y="3.812" />
+        <Point X="7.938" Y="3.146" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAGAABAAAAAAAAAAAAAAAAACAAABACAAAAAAAAA=</HashCode>
+      <FileName>DataMapper\InstitutionCategoryMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.InstitutionMapper">
+    <Position X="9.75" Y="4.5" Width="2" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="11" Y="3.812" />
+        <Point X="11" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAIAECAABIAAAAAAACAAAAAIAACAAABAAAAAAAgAEA=</HashCode>
+      <FileName>DataMapper\InstitutionMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.ReservationMapper">
+    <Position X="12.5" Y="0.5" Width="2.5" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="12.5" Y="3.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAACACAABAAAAAAAAAKABAgAAACAAABAAABAACAAAA=</HashCode>
+      <FileName>DataMapper\ReservationMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.ReservationObjectMapper">
+    <Position X="3.75" Y="0.5" Width="2.25" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="5" Y="3.812" />
+        <Point X="5" Y="2.761" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapper\ReservationObjectMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DataMapper.StructuralObjectMapper">
+    <Position X="6.75" Y="4.5" Width="2.25" />
+    <InheritanceLine Type="DataLayer.DataMapper.AbstractMapper&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.812" />
+        <Point X="7.938" Y="3.812" />
+        <Point X="7.938" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAECAABQgAAAAAAAAABAAIAAKAAABAAIAAACAAAA=</HashCode>
+      <FileName>DataMapper\StructuralObjectMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
