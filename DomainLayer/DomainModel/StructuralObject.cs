@@ -29,6 +29,10 @@ namespace DomainLayer.DomainModel
             }
             set
             {
+                if (value > DateTime.Now)
+                {
+                    throw new NotSupportedException();
+                }
                 _DeletedFrom = value;
             }
         }

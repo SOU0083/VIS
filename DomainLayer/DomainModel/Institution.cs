@@ -39,21 +39,5 @@ namespace DomainLayer.DomainModel
         {
 
         }
-
-        public override DateTime? DeletedFrom
-        {
-            get
-            {
-                return _DeletedFrom;
-            }
-            set
-            {
-                if (value > DateTime.Now)
-                {
-                    throw new NotSupportedException();
-                }
-                _DeletedFrom = value;
-            }
-        }
     }
 }
