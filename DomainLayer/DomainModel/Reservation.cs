@@ -36,5 +36,7 @@ namespace DomainLayer.DomainModel
         public bool IsInProgress() => (HasStarted() && !HasEnded());
 
         public bool IsDeleted() => DeletedFrom != null;
+
+        public void WriteEmailToCustomer(string text) => Reservation_Customer.WriteEmail(text);
     }
 }

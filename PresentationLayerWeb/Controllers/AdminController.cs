@@ -41,7 +41,7 @@ namespace PresentationLayerWeb.Controllers
             id = "/" + id + "/";
             List<Reservation> rList = reservationMapper.FindDescendantsReservations(id);
             foreach (Reservation r in rList)
-                r.Reservation_Customer.WriteEmail("Vaše rezervace ID: " + r.Id + " byla zrušena.");
+                r.WriteEmailToCustomer("Vaše rezervace ID: " + r.Id + " byla zrušena.");
 
             reservationMapper.DeleteDescendantsReservations(id);
             eventMapper.DeleteDescendantsEvents(id);

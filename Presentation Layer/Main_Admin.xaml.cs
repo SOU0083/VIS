@@ -49,7 +49,7 @@ namespace Presentation_Layer
 
                 List<Reservation> rList = reservationMapper.FindDescendantsReservations(selectedObject.HierarchyId);
                 foreach (Reservation r in rList)
-                    r.Reservation_Customer.WriteEmail("Vaše rezervace ID: " + r.Id + " byla zrušena.");
+                    r.WriteEmailToCustomer("Vaše rezervace ID: " + r.Id + " byla zrušena.");
 
                 reservationMapper.DeleteDescendantsReservations(selectedObject.HierarchyId);
                 eventMapper.DeleteDescendantsEvents(selectedObject.HierarchyId);
